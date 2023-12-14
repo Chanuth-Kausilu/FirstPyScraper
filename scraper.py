@@ -11,7 +11,7 @@ def scrape_blog_titles(url):
         soup = BeautifulSoup(response.text, 'html.parser')
 
         # Find and print the titles of articles
-        titles = soup.find_all('h2', class_='article-title')
+        titles = soup.find_all('a', class_='biglink')
         for title in titles:
             print(title.text)
     else:
